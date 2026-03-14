@@ -84,8 +84,6 @@ lib/
 3. If the most recent study date is more than 1 day ago, streak resets to 0
 4. If a day is skipped, the streak starts from 1 again on the next study session
 
-```
-
 ---
 
 ## Deployment
