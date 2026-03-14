@@ -10,8 +10,14 @@ export default function Home() {
   const [totalDays, setTotalDays] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  function getDates(): string[] {
+    const stored = localStorage.getItem("studyDates");
+    return stored ? JSON.parse(stored) : [];
+  }
+
   async function fetchStreak() {
-    const res = await fetch("/api/streak");
+    const dates = getDates();
+    const res = await fetch(`/api/streak?dates=${JSON.stringify(dates)}`);
     const data = await res.json();
     setCurrentStreak(data.currentStreak);
     setLastStudyDate(data.lastStudyDate);
@@ -26,9 +32,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col items-center justify-center px-4 py-12">
       <div className="flex flex-col items-center gap-6 w-full max-w-md">
-
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-yellow-500">Study Ledger</h1>
+          <h1 className="text-3xl font-bold text-yellow-500">StudyLedger</h1>
           <p className="text-yellow-500 mt-1 text-sm">Track your daily study habits</p>
         </div>
 
@@ -41,14 +46,11 @@ export default function Home() {
               lastStudyDate={lastStudyDate}
               totalDays={totalDays}
             />
-            <StudyButton onClick={fetchStreak} />
+            <StudyButton onClick={fetchStreak} getDates={getDates} />
           </>
         )}
 
-        <Link
-          href="/history"
-          className="text-yellow-600 hover:underline text-sm mt-2"
-        >
+        <Link href="/history" className="text-yellow-600 hover:underline text-sm mt-2">
           View Study History →
         </Link>
       </div>
