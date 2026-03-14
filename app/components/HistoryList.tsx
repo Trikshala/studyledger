@@ -5,7 +5,7 @@ type HistoryListProps = {
 export default function HistoryList({ entries }: HistoryListProps) {
   if (entries.length === 0) {
     return (
-      <p className="text-gray-400 text-sm text-center py-6">
+      <p className="text-red-400 text-sm text-center py-6">
         No study sessions recorded yet.
       </p>
     );
@@ -16,7 +16,7 @@ export default function HistoryList({ entries }: HistoryListProps) {
       {entries.map((date, i) => (
         <li
           key={i}
-          className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-gray-700 text-sm shadow-sm"
+          className="bg-gray-900 border border-yellow-500 rounded-lg px-4 py-3 text-yellow-400 text-sm shadow-sm"
         >
           📅{" "}
           {new Date(date).toLocaleDateString("en-US", {

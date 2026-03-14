@@ -34,7 +34,7 @@ export default function StudyButton({ onClick }: StudyButtonProps) {
       <button
         onClick={handleClick}
         disabled={loading}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Marking..." : "Mark Study"}
       </button>

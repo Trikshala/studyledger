@@ -24,12 +24,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-12">
+    <main className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col items-center justify-center px-4 py-12">
       <div className="flex flex-col items-center gap-6 w-full max-w-md">
 
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-800">Study Ledger</h1>
-          <p className="text-gray-500 mt-1 text-sm">Track your daily study habit</p>
+          <h1 className="text-3xl font-bold text-yellow-500">Study Ledger</h1>
+          <p className="text-yellow-500 mt-1 text-sm">Track your daily study habits</p>
         </div>
 
         {loading ? (
@@ -47,7 +47,7 @@ export default function Home() {
 
         <Link
           href="/history"
-          className="text-blue-600 hover:underline text-sm mt-2"
+          className="text-yellow-600 hover:underline text-sm mt-2"
         >
           View Study History →
         </Link>
